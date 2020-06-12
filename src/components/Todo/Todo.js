@@ -1,10 +1,10 @@
 import React from 'react'
 import './Todo.style.css'
 
-function Todo(props) {
+function Todo({ todo }) {
   return (
     <div className='todo-container'>
-      <p>todo</p>
+      <p>{ todo.message }</p>
     </div>
   );
 }

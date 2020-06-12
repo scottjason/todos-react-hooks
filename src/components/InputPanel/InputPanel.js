@@ -1,15 +1,26 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import './InputPanel.style.css'
 
-function InputPanel(props) {
+const InputPanel = props => {
   
   const todoRef = React.createRef()
+
+  const generateTodo = message => {
+    return {
+      id: uuidv4(),
+      message,
+      createdAt: Date.now(),
+      isCompleted: false,
+      isDeleted: false,
+    }
+  }
   
   const onHandleSubmit = e => {
   	e && e.preventDefault()
-  	const todo = todoRef.current.value
-  	if (todo) {
-  	  const action = { type: 'NEW_TODO', payload: todo }
+  	const message = todoRef.current.value
+  	if (message) {
+  	  const action = { type: 'NEW_TODO', payload: generateTodo(message) }
   	  props.dispatch(action)
   	  todoRef.current.value = ''
   	}
