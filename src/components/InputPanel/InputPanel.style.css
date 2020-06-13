@@ -4,28 +4,31 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	height: 60px;
-	margin: 0 auto;
+	width: calc(100% - 2rem);
+	max-width: 600px;
+	min-width: 280px;
+	height: auto;
 }
 
 .todo-input {
-	width: 100%;
+	width: 70%;
 	max-width: 400px;
-	min-width: 280px; 
+	min-width: 210px; 
 	height: 40px;
 	background-color: white;
 	outline: none;
-	border: none;
+	border: 1px solid gray;
 	padding: 0 .5rem 0 .5rem;
 }
 
 .submit {
-	width: 100px;
-	height: 40px;
-	border: 1px solid white;
-	background-color: white;
+	width: 100%;
+	min-width: 70px;
+	max-width: 100px;
+	height: 41px;
+	background-color: #ffffff;
 	color: black;
 	margin-left: 1px;
 	cursor: pointer;
+	border: 1px solid gray;
 }

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { BsPencil } from 'react-icons/bs';
+
+
 import './Header.style.css'
 
 function Header(props) {
@@ -21,7 +24,9 @@ function Header(props) {
 
   return (
     <div className='header-container'>
-      <header>{headerCopy}</header>
+      <h1 className='header'>todos</h1>
+      <hr className='line'/>
+      <BsPencil className='pencil-icon' />
     </div>
   )
 }

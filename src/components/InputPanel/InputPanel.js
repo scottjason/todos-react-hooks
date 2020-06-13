@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import './InputPanel.style.css'
 
 const InputPanel = props => {
   
-  const todoRef = React.createRef()
+  const todoRef = createRef()
 
   const generateTodo = message => {
     return {
