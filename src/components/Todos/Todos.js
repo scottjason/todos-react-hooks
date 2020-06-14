@@ -3,15 +3,16 @@ import './Todos.style.css';
 import Todo from '../Todo/Todo';
 
 function Todos(props) {
-  const todos = [ ...props.state.todos ]
+  const todos = [...props.state.todos]
   console.log(todos)
   return (
-    <div className='todos-container'>
-      {todos.map(todo => {
-      	return <Todo
-      	  key={todo.id}
-      	  todo={todo} />
-      })}
+    <div className="todos-container">
+      {todos.map((todo) => (
+        <Todo
+          key={todo.id}
+          todo={todo}
+        />
+      ))}
     </div>
   );
 }

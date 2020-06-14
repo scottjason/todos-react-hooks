@@ -5,13 +5,13 @@
 	align-items: center;
 	justify-content: center;
 	width: calc(100% - 2rem);
-	max-width: 600px;
+	max-width: 500px;
 	min-width: 280px;
 	height: auto;
 }
 
 .todo-input {
-	width: 70%;
+	width: 100%;
 	max-width: 400px;
 	min-width: 210px; 
 	height: 40px;
@@ -19,6 +19,7 @@
 	outline: none;
 	border: 1px solid gray;
 	padding: 0 .5rem 0 .5rem;
+	box-sizing: border-box;
 }
 
 .submit {
@@ -31,4 +32,5 @@
 	margin-left: 1px;
 	cursor: pointer;
 	border: 1px solid gray;
+	box-sizing: border-box;
 }

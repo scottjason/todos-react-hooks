@@ -3,7 +3,7 @@ import './Todo.style.css'
 
 function Todo({ todo }) {
   return (
-    <div className='todo-container'>
+    <div className="todo-container">
       <p>{ todo.message }</p>
     </div>
   );

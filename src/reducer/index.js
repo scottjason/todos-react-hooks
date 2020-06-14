@@ -1,5 +1,5 @@
 const reducer = (state, action) => {
-  switch (action.type) { 
+  switch (action.type) {
     case 'NEW_TODO':
       const todo = action.payload
       state.todos.push(todo)
