@@ -17,28 +17,28 @@ const InputPanel = (props) => {
   	e && e.preventDefault()
   	const message = todoRef.current.value
   	if (message) {
-  	  const action = { type: 'NEW_TODO', payload: generateTodo(message) }
+  	  const action = { type: 'ADD_TODO', payload: generateTodo(message) }
   	  props.dispatch(action)
   	  todoRef.current.value = ''
   	}
   }
   return (
     <form
-      className="input-panel-container"
+      className='input-panel-container'
       onSubmit={onHandleSubmit}
-      autoComplete="off"
+      autoComplete='off'
     >
       <input
-        type="text"
-        name="todo"
+        type='text'
+        name='todo'
         ref={todoRef}
-        placeholder="enter a todo..."
-        className="todo-input"
+        placeholder='enter a todo...'
+        className='todo-input'
       />
       <input
-        type="submit"
-        value="Submit"
-        className="submit"
+        type='submit'
+        value='Submit'
+        className='submit'
         onClick={onHandleSubmit}
       />
     </form>
