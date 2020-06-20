@@ -1,5 +1,25 @@
-/* eslint-disable no-case-declarations */
 const reducer = (state, action) => {
+
+  const completeTodo = targetId => {
+    return state.todos.map(todo => {
+      if (todo.id === targetId) {
+        todo.isDeleted = false
+        todo.isCompleted = true
+      }
+      return todo
+    })
+  }
+
+  const deleteTodo = targetId => {
+    return state.todos.map(todo => {
+      if (todo.id === targetId) {
+        todo.isDeleted = true
+        todo.isCompleted = false
+      }
+      return todo
+    })
+  }
+
   switch (action.type) {
   case 'ADD_TODO':
     return {
@@ -7,15 +27,14 @@ const reducer = (state, action) => {
       todos: state.todos.concat(action.payload),
     }
   case 'COMPLETE_TODO':
-    const todos = state.todos.map(todo => {
-      if (todo.id === action.payload) {
-        todo.isCompleted = true
-      }
-      return todo
-    })
     return {
       ...state,
-      todos,
+      todos: completeTodo(action.payload)
+    }
+  case 'DELETE_TODO':
+    return {
+      ...state,
+      todos: deleteTodo(action.payload)
     }
   case 'SET_ACTIVE_TAB':
     return {

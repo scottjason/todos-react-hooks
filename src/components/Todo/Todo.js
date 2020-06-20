@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { BsCheckBox } from 'react-icons/bs'
 import './Todo.style.css'
@@ -12,7 +12,10 @@ function Todo(props) {
 	        className='checkbox'
 	        onClick={() => props.onComplete(todo.id)}
 	       />
-	      <BsTrash className='trash-can' />
+	      <BsTrash
+	        className='trash-can'
+					onClick={() => props.onDelete(todo.id)}
+	      />
 	    </div>
 	    <div className='item-container'>
 	      <p>{ todo.message }</p>

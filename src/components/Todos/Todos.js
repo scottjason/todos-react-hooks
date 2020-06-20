@@ -3,11 +3,9 @@ import './Todos.style.css';
 import Todo from '../Todo/Todo';
 
 function Todos(props) {
-  console.log(props.state)
   let todos = [...props.state.todos]
   const { dispatch } = props
   
-  const isTodosActive = props.state.view === 'todos'
   const isCompletedActive = props.state.view === 'completed'
   const isDeletedActive = props.state.view === 'deleted'
 
@@ -20,8 +18,8 @@ function Todos(props) {
         return todo.isDeleted
     })
   } else {
-    todos = todos.filter(todo => {
-      return !todo.isCompleted && !todo.isDeleted
+      todos = todos.filter(todo => {
+        return !todo.isCompleted && !todo.isDeleted
     })
   }
   
@@ -37,6 +35,12 @@ function Todos(props) {
       const action = generateAction(type, todoId)
       dispatch(action)
   }
+
+  const onDelete = todoId => {
+      const type = 'DELETE_TODO'
+      const action = generateAction(type, todoId)
+      dispatch(action)
+  }
   
   return (
     <div className='todos-container'>
@@ -45,6 +49,7 @@ function Todos(props) {
           key={todo.id}
           todo={todo}
           onComplete={onComplete}
+          onDelete={onDelete}
         />
       ))}
     </div>
