@@ -16,6 +16,13 @@ const Tabs = props => {
     return (className === isHovered || className === isActive) ? `${className} hovered` : className.split(' ')[0]
   }
 
+  const generateAction = (type, className) => {
+    return {
+      type,
+      payload: viewMap[className],
+    }
+  }
+
   const onMouseEnter = className => {
      if (className !== isHovered) {
       setHovered(className)
@@ -25,14 +32,6 @@ const Tabs = props => {
   const onMouseLeave = className => {
     if (className === isHovered) {
       setHovered('')
-    }
-  }
-
-  const generateAction = (type, className) => {
-
-    return {
-      type,
-      payload: viewMap[className],
     }
   }
 

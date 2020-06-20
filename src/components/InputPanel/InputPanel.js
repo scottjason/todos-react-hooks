@@ -2,8 +2,9 @@ import React, { createRef } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import './InputPanel.style.css'
 
-const InputPanel = (props) => {
+const InputPanel = props => {
   const todoRef = createRef()
+  const { dispatch } = props
 
   const generateTodo = (message) => ({
     id: uuidv4(),
@@ -18,7 +19,7 @@ const InputPanel = (props) => {
   	const message = todoRef.current.value
   	if (message) {
   	  const action = { type: 'ADD_TODO', payload: generateTodo(message) }
-  	  props.dispatch(action)
+  	  dispatch(action)
   	  todoRef.current.value = ''
   	}
   }

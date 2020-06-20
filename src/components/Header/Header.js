@@ -2,7 +2,7 @@ import React from 'react'
 import { BsPencil } from 'react-icons/bs';
 import './Header.style.css'
 
-function Header(props) {
+function Header() {
   return (
     <div className="header-container">
       <h1 className="header">todos</h1>

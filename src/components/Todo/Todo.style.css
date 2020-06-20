@@ -1,5 +1,12 @@
 .todo-container {
 	position: relative;
+	margin-top: 1rem;
+	width: 100%;
+	height: auto;
+}
+
+.item-container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -7,9 +14,26 @@
 	width: 100%;
 	height: auto;
 	min-height: 50px;
-  	color: grey;
-	margin-top: 0.5rem;  	
+  color: grey;
 	border: 1px solid grey;
 	padding: 0 0 0 1rem;
 	box-sizing: border-box;	
+}
+
+.icon-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.checkbox {
+	margin-right: 0.3rem;
+	cursor: pointer;
+}
+
+.trash-can {
+  cursor: pointer;  
 }

@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { BsTrash } from 'react-icons/bs'
+import { BsCheckBox } from 'react-icons/bs'
 import './Todo.style.css'
 
-function Todo({ todo }) {
+function Todo(props) {
+	const { todo } = props;
   return (
-    <div className="todo-container">
-      <p>{ todo.message }</p>
-    </div>
+  	<div className='todo-container'>
+	    <div className='icon-container'>
+	      <BsCheckBox
+	        className='checkbox'
+	        onClick={() => props.onComplete(todo.id)}
+	       />
+	      <BsTrash className='trash-can' />
+	    </div>
+	    <div className='item-container'>
+	      <p>{ todo.message }</p>
+	    </div>
+  	</div>    
   );
 }
 
