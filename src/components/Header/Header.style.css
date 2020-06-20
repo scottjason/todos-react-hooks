@@ -1,34 +1,33 @@
 .header-container {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 40px;
-  color: grey;
-  width: calc(100% - 2rem);
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 40px;
+	color: grey;
+	width: calc(100% - 2rem);
 	max-width: 500px;
-  min-width: 280px;
+	min-width: 280px;
 }
 
 .header {
-  font-size: 1.25rem;
-  margin: 0;
-  font-weight: 300;
+	font-size: 1.25rem;
+	margin: 0;
+	font-weight: 300;
 }
 
 .line {
-  background-color: grey;
-  height: 1px;
-  margin: 0;
-  width: 90%;
-  margin-left: .2rem;
-  margin-top: .5rem;
-  opacity: .2;
+	background-color: grey;
+	height: 1px;
+	margin: 0;
+	width: 90%;
+	margin-left: .2rem;
+	margin-top: .5rem;
+	opacity: .2;
 }
 
 .pencil-icon {
-  position: relative;
-  margin: 0 0 9px 2px;
-  font-size: 1.25rem;
+	position: relative;
+	margin: 0 0 9px 2px;
+	font-size: 1.25rem;
 }
-

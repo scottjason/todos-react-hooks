@@ -4,7 +4,7 @@ import { BsCheckBox } from 'react-icons/bs'
 import './Todo.style.css'
 
 function Todo(props) {
-	const { todo } = props;
+  const { todo } = props;
   return (
   	<div className='todo-container'>
 	    <div className='icon-container'>
@@ -14,7 +14,7 @@ function Todo(props) {
 	       />
 	      <BsTrash
 	        className='trash-can'
-					onClick={() => props.onDelete(todo.id)}
+		onClick={() => props.onDelete(todo.id)}
 	      />
 	    </div>
 	    <div className='item-container'>

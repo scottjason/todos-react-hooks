@@ -1,6 +1,6 @@
-import React from 'react';
-import './Todos.style.css';
-import Todo from '../Todo/Todo';
+import React from 'react'
+import Todo from '../Todo/Todo'
+import './Todos.style.css'
 
 function Todos(props) {
   let todos = [...props.state.todos]
@@ -31,15 +31,15 @@ function Todos(props) {
   }
 
   const onComplete = todoId => {
-      const type = 'COMPLETE_TODO'
-      const action = generateAction(type, todoId)
-      dispatch(action)
+    const type = 'COMPLETE_TODO'
+    const action = generateAction(type, todoId)
+    dispatch(action)
   }
 
   const onDelete = todoId => {
-      const type = 'DELETE_TODO'
-      const action = generateAction(type, todoId)
-      dispatch(action)
+    const type = 'DELETE_TODO'
+    const action = generateAction(type, todoId)
+    dispatch(action)
   }
   
   return (
@@ -53,7 +53,7 @@ function Todos(props) {
         />
       ))}
     </div>
-  );
+  )
 }
 
-export default Todos;
+export default Todos

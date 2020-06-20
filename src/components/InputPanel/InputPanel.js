@@ -1,5 +1,5 @@
 import React, { createRef } from 'react'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 import './InputPanel.style.css'
 
 const InputPanel = props => {
@@ -15,14 +15,15 @@ const InputPanel = props => {
   })
 
   const onHandleSubmit = (e) => {
-  	e && e.preventDefault()
-  	const message = todoRef.current.value
-  	if (message) {
-  	  const action = { type: 'ADD_TODO', payload: generateTodo(message) }
-  	  dispatch(action)
-  	  todoRef.current.value = ''
-  	}
+    e && e.preventDefault()
+    const message = todoRef.current.value
+    if (message) {
+      const action = { type: 'ADD_TODO', payload: generateTodo(message) }
+      dispatch(action)
+       todoRef.current.value = ''
+    }
   }
+
   return (
     <form
       className='input-panel-container'
