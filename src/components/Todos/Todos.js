@@ -15,7 +15,7 @@ function Todos(props) {
     })
   } else if (isDeletedActive) {
     todos = todos.filter(todo => {
-      return todo.isDeleted
+      return todo.isDeleted && !todo.isRemoved
     })
   } else {
     todos = todos.filter(todo => {
@@ -36,8 +36,8 @@ function Todos(props) {
     dispatch(action)
   }
 
-  const onUpdate = todoId => {
-    const type = 'UPDATE_TODO'
+  const onUndo = todoId => {
+    const type = 'UNDO_TODO'
     const action = generateAction(type, todoId)
     dispatch(action)
   }
@@ -52,11 +52,11 @@ function Todos(props) {
     <div className='todos-container'>
       {todos.map(todo => (
         <Todo
-          key={todo.id}
           todo={todo}
-          onComplete={onComplete}
-          onUpdate={onUpdate}
+          key={todo.id}
+          onUndo={onUndo}
           onDelete={onDelete}
+          onComplete={onComplete}
         />
       ))}
     </div>

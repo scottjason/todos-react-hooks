@@ -35,15 +35,27 @@
 }
 
 .trash-can {
-  cursor: pointer;  
+	cursor: pointer;
 }
 
 .update {
 	position: relative;
+	display: inline-block;
 	margin: 0;
   font-size: .8rem;
-  top: 14px;
+	top: 14px;
 	color: gray;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.undo {
+  position: relative;
+	margin-right: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  top: -1px;
+	color: rgba(0, 0, 0, .8);
 	cursor: pointer;
 	z-index: 1;
 }

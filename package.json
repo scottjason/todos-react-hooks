@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "3.10.0",
@@ -12,8 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "lint": "eslint --fix ."
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
