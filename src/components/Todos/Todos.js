@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Todo from '../Todo/Todo'
 import './Todos.style.css'
 
-function Todos(props) {
+const Todos = (props) => {
   let todos = [...props.state.todos]
   const { dispatch } = props
 
@@ -69,6 +70,12 @@ function Todos(props) {
       ))}
     </div>
   )
+}
+
+Todos.propTypes = {
+  todo: PropTypes.object.isRequired,
+  view: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default Todos

@@ -1,8 +1,9 @@
 import React, { createRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import PropTypes from 'prop-types'
 import './InputPanel.style.css'
 
-const InputPanel = props => {
+const InputPanel = (props) => {
   const todoRef = createRef()
   const { dispatch } = props
 
@@ -27,25 +28,29 @@ const InputPanel = props => {
 
   return (
     <form
-      className='input-panel-container'
+      className="input-panel-container"
       onSubmit={onHandleSubmit}
-      autoComplete='off'
+      autoComplete="off"
     >
       <input
-        type='text'
-        name='todo'
+        type="text"
+        name="todo"
         ref={todoRef}
-        placeholder='enter a todo...'
-        className='todo-input'
+        placeholder="enter a todo..."
+        className="todo-input"
       />
       <input
-        type='submit'
-        value='Submit'
-        className='submit'
+        type="submit"
+        value="Submit"
+        className="submit"
         onClick={onHandleSubmit}
       />
     </form>
   )
+}
+
+InputPanel.propTypes = {
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default InputPanel

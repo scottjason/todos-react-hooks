@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { BsTrash } from 'react-icons/bs'
-import { BsCheckBox } from 'react-icons/bs'
+import PropTypes from 'prop-types'
 import { GrUndo } from 'react-icons/gr'
-
+import { BsTrash, BsCheckBox } from 'react-icons/bs'
 import './Todo.style.css'
 
-function Todo(props) {
+const Todo = (props) => {
   const { todo } = props
   const inputRef = useRef(null)
   const [isReadOnly, setReadOnly] = useState(true)
@@ -63,6 +62,11 @@ function Todo(props) {
       />
     </div>
   )
+}
+
+Todo.propTypes = {
+  todo: PropTypes.object,
+  view: PropTypes.string.isRequired,
 }
 
 export default Todo

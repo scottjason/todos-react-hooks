@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "3.10.0",
@@ -33,7 +34,7 @@
   },
   "devDependencies": {
     "husky": "^4.2.5",
-    "prettier": "2.0.5",
+    "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   }
 }
