@@ -5,24 +5,24 @@ import './Todos.style.css'
 function Todos(props) {
   let todos = [...props.state.todos]
   const { dispatch } = props
-	
+
   const isCompletedActive = props.state.view === 'completed'
   const isDeletedActive = props.state.view === 'deleted'
 
   if (isCompletedActive) {
-    todos = todos.filter(todo => {
+    todos = todos.filter((todo) => {
       return todo.isCompleted
     })
   } else if (isDeletedActive) {
-    todos = todos.filter(todo => {
-      return todo.isDeleted && !todo.isRemoved
+    todos = todos.filter((todo) => {
+      return todo.isDeleted
     })
   } else {
-    todos = todos.filter(todo => {
+    todos = todos.filter((todo) => {
       return !todo.isCompleted && !todo.isDeleted
     })
   }
-	
+
   const generateAction = (type, todoId) => {
     return {
       type,
@@ -30,33 +30,41 @@ function Todos(props) {
     }
   }
 
-  const onComplete = todoId => {
+  const onComplete = (todoId) => {
     const type = 'COMPLETE_TODO'
     const action = generateAction(type, todoId)
     dispatch(action)
   }
 
-  const onUndo = todoId => {
+  const onDelete = (todoId) => {
+    const type = 'DELETE_TODO'
+    const action = generateAction(type, todoId)
+    dispatch(action)
+  }
+
+  const onRemove = (todoId) => {
+    const type = 'REMOVE_TODO'
+    const action = generateAction(type, todoId)
+    dispatch(action)
+  }
+
+  const onUndo = (todoId) => {
     const type = 'UNDO_TODO'
     const action = generateAction(type, todoId)
     dispatch(action)
   }
 
-  const onDelete = todoId => {
-    const type = 'DELETE_TODO'
-    const action = generateAction(type, todoId)
-    dispatch(action)
-  }
-	
   return (
-    <div className='todos-container'>
-      {todos.map(todo => (
+    <div className="todos-container">
+      {todos.map((todo) => (
         <Todo
           todo={todo}
           key={todo.id}
           onUndo={onUndo}
           onDelete={onDelete}
+          onRemove={onRemove}
           onComplete={onComplete}
+          view={props.state.view}
         />
       ))}
     </div>

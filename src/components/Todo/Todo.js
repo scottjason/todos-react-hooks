@@ -16,6 +16,12 @@ function Todo(props) {
     }
   }, [isReadOnly])
 
+  const onKeyPress = (e) => {
+    if (!isReadOnly && e.key === 'Enter') {
+      setReadOnly(true)
+    }
+  }
+
   return (
     <div className="todo-container">
       {!todo.isCompleted && !todo.isDeleted && (
@@ -34,15 +40,24 @@ function Todo(props) {
         {(todo.isCompleted || todo.isDeleted) && (
           <GrUndo className="undo" onClick={() => props.onUndo(todo.id)} />
         )}
-        <BsTrash
-          className="trash-can"
-          onClick={() => props.onDelete(todo.id)}
-        />
+        {props.view !== 'deleted' && (
+          <BsTrash
+            className="trash-can"
+            onClick={() => props.onDelete(todo.id)}
+          />
+        )}
+        {props.view === 'deleted' && (
+          <BsTrash
+            className="trash-can"
+            onClick={() => props.onRemove(todo.id)}
+          />
+        )}
       </div>
 
       <input
         ref={inputRef}
         readOnly={isReadOnly}
+        onKeyPress={onKeyPress}
         className="item-container"
         defaultValue={todo.message}
       />
