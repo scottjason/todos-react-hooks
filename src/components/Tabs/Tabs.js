@@ -24,9 +24,9 @@ const Tabs = props => {
   }
 
   const onMouseEnter = className => {
-     if (className !== isHovered) {
+    if (className !== isHovered) {
       setHovered(className)
-     }
+    }
   }
 
   const onMouseLeave = className => {
@@ -62,10 +62,10 @@ const Tabs = props => {
             completed
         </li>
         <li
-        onMouseEnter={() => onMouseEnter('tab-2')}
-        onMouseLeave={() => onMouseLeave('tab-2')}
-        onClick={() => onSelect('tab-2')}
-        className={generateClass('tab-2')}>
+          onMouseEnter={() => onMouseEnter('tab-2')}
+          onMouseLeave={() => onMouseLeave('tab-2')}
+          onClick={() => onSelect('tab-2')}
+          className={generateClass('tab-2')}>
             deleted
         </li>
       </ul>

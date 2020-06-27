@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsPencil } from 'react-icons/bs';
+import { BsPencil } from 'react-icons/bs'
 import './Header.style.css'
 
 function Header() {

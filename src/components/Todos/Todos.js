@@ -5,7 +5,7 @@ import './Todos.style.css'
 function Todos(props) {
   let todos = [...props.state.todos]
   const { dispatch } = props
-  
+	
   const isCompletedActive = props.state.view === 'completed'
   const isDeletedActive = props.state.view === 'deleted'
 
@@ -14,15 +14,15 @@ function Todos(props) {
       return todo.isCompleted
     })
   } else if (isDeletedActive) {
-      todos = todos.filter(todo => {
-        return todo.isDeleted
+    todos = todos.filter(todo => {
+      return todo.isDeleted
     })
   } else {
-      todos = todos.filter(todo => {
-        return !todo.isCompleted && !todo.isDeleted
+    todos = todos.filter(todo => {
+      return !todo.isCompleted && !todo.isDeleted
     })
   }
-  
+	
   const generateAction = (type, todoId) => {
     return {
       type,
@@ -36,19 +36,26 @@ function Todos(props) {
     dispatch(action)
   }
 
+  const onUpdate = todoId => {
+    const type = 'UPDATE_TODO'
+    const action = generateAction(type, todoId)
+    dispatch(action)
+  }
+
   const onDelete = todoId => {
     const type = 'DELETE_TODO'
     const action = generateAction(type, todoId)
     dispatch(action)
   }
-  
+	
   return (
     <div className='todos-container'>
-      {todos.map((todo) => (
+      {todos.map(todo => (
         <Todo
           key={todo.id}
           todo={todo}
           onComplete={onComplete}
+          onUpdate={onUpdate}
           onDelete={onDelete}
         />
       ))}

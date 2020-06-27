@@ -9,6 +9,7 @@ const InputPanel = props => {
   const generateTodo = (message) => ({
     id: uuidv4(),
     message,
+    isReadOnly: true,
     isCompleted: false,
     isDeleted: false,
     createdAt: Date.now(),
@@ -20,7 +21,7 @@ const InputPanel = props => {
     if (message) {
       const action = { type: 'ADD_TODO', payload: generateTodo(message) }
       dispatch(action)
-       todoRef.current.value = ''
+      todoRef.current.value = ''
     }
   }
 

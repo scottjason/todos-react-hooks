@@ -37,3 +37,13 @@
 .trash-can {
   cursor: pointer;  
 }
+
+.update {
+	position: relative;
+	margin: 0;
+  font-size: .8rem;
+  top: 14px;
+	color: gray;
+	cursor: pointer;
+	z-index: 1;
+}

@@ -10,6 +10,16 @@ const reducer = (state, action) => {
     })
   }
 
+  const updateTodo = targetId => {
+    return state.todos.map(todo => {
+      if (todo.id === targetId) {
+        console.log(todo.isReadOnly)
+        todo.isReadOnly = !todo.isReadOnly
+      }
+      return todo
+    })
+  }
+
   const deleteTodo = targetId => {
     return state.todos.map(todo => {
       if (todo.id === targetId) {
@@ -24,7 +34,12 @@ const reducer = (state, action) => {
   case 'ADD_TODO':
     return {
       ...state,
-      todos: state.todos.concat(action.payload),
+      todos: state.todos.concat(action.payload)
+    }
+  case 'UPDATE_TODO':
+    return {
+      ...state,
+      todos: updateTodo(action.payload)
     }
   case 'COMPLETE_TODO':
     return {
