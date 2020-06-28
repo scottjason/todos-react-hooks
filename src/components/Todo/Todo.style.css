@@ -1,23 +1,28 @@
 .todo-container {
-	position: relative;
-	margin-top: 1rem;
-	width: 100%;
-	height: auto;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 0.1rem;
+}
+
+.push-down {
+  margin-top: 1.5rem;
 }
 
 .item-container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	flex-shrink: 1;
-	width: 100%;
-	height: auto;
-	min-height: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 1;
+  width: 100%;
+  height: auto;
+  min-height: 50px;
   color: grey;
-	border: 1px solid grey;
-	padding: 0 0 0 1rem;
-	box-sizing: border-box;	
+  border: 1px solid grey;
+  padding: 0 0 0 1rem;
+  background-color: #f1f1f3;
+  box-sizing: border-box;
 }
 
 .icon-container {
@@ -30,32 +35,35 @@
 }
 
 .checkbox {
-	margin-right: 0.3rem;
-	cursor: pointer;
+  color: #f1f1f3;
+  margin-right: 0.3rem;
+  cursor: pointer;
 }
 
 .trash-can {
-	cursor: pointer;
+  color: #f1f1f3;
+  cursor: pointer;
 }
 
 .update {
-	position: relative;
-	display: inline-block;
-	margin: 0;
-  font-size: .8rem;
-	top: 14px;
-	color: gray;
-	cursor: pointer;
-	z-index: 1;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  top: 14px;
+  color: #f1f1f3;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .undo {
   position: relative;
-	margin-right: 0.3rem;
+  margin-right: 0.3rem;
   cursor: pointer;
   font-size: 1rem;
   top: -1px;
-	color: rgba(0, 0, 0, .8);
-	cursor: pointer;
-	z-index: 1;
+  color: #f1f1f3;
+  cursor: pointer;
+  z-index: 1;
 }

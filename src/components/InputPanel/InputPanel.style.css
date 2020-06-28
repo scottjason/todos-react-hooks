@@ -1,36 +1,37 @@
 .input-panel-container {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: calc(100% - 2rem);
-	max-width: 500px;
-	min-width: 280px;
-	height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  min-width: 280px;
+  height: auto;
 }
 
 .todo-input {
-	width: 100%;
-	max-width: 400px;
-	min-width: 210px; 
-	height: 40px;
-	background-color: white;
-	outline: none;
-	border: 1px solid gray;
-	padding: 0 .5rem 0 .5rem;
-	box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  min-width: 210px;
+  height: 40px;
+  color: #525147;
+  background-color: #f1f1f3;
+  outline: none;
+  border: 1px solid gray;
+  border-right: none;
+  padding: 0 0.5rem 0 0.5rem;
+  box-sizing: border-box;
 }
 
 .submit {
-	width: 100%;
-	min-width: 70px;
-	max-width: 100px;
-	height: 40px;
-	background-color: #ffffff;
-	color: black;
-	margin-left: 1px;
-	cursor: pointer;
-	border: 1px solid gray;
-	box-sizing: border-box;
+  width: 100%;
+  min-width: 70px;
+  max-width: 100px;
+  height: 40px;
+  text-transform: uppercase;
+  color: gray;
+  border: 1px solid gray;
+  background-color: #f1f1f3;
+  cursor: pointer;
 }

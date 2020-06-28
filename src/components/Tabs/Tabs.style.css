@@ -1,7 +1,7 @@
 .tabs-container {
   position: relative;
-  width: calc(100% - 2rem);
-  max-width: 500px;
+  width: calc(100% - 2.1rem);
+  max-width: 498px;
   min-width: 280px;
   height: auto;
   background-color: #f1f1f3;
@@ -39,10 +39,10 @@
   box-sizing: border-box;
   background-color: #f1f1f3;
   transition: all 0.25s ease;
-} 
+}
 
 .hovered {
-  background-color: #D1D1DC;
+  background-color: #7689a9;
   color: #ffffff;
 }
 

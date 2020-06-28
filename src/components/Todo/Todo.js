@@ -21,8 +21,14 @@ const Todo = (props) => {
     }
   }
 
+  const getContainerClass = () => {
+    return todo.isCompleted || todo.isDeleted
+      ? 'todo-container push-down'
+      : 'todo-container'
+  }
+
   return (
-    <div className="todo-container">
+    <div className={getContainerClass()}>
       {!todo.isCompleted && !todo.isDeleted && (
         <p className="update" onClick={() => setReadOnly(!isReadOnly)}>
           {isReadOnly && 'UPDATE'}
