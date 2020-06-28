@@ -16,4 +16,4 @@ then:
 
 The app will open up at `localhost:3000`
 
-![Todos w/ React Hooks](https://sj-portfolio.s3-us-west-1.amazonaws.com/todos-hooks.png)
+![Todos w/ React Hooks](https://sj-portfolio.s3-us-west-1.amazonaws.com/todos-react-hooks.png)
